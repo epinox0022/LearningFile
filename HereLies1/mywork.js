@@ -99,14 +99,15 @@ shoNmber.textContent = mbers;
 
 // };  
 
-// const peCunia = document.getElementById("pecunia");
-// const inTrare = document.getElementById("intrare");
-// const mars = document.getElementById("marcs");
+const peCunia = document.getElementById("pecunia");
+const inTrare = document.getElementById("intrare");
+const mars = document.getElementById("marcs");
 
-//   = peCunia.value;
-//     nex = Number(nex);  
-// peCunia.onclick= function() {
+
+peCunia.onclick= function() {
    
+ let nex = peCunia.value; 
+   const mark = nex >= 100 ? mars.textContent = mars.textContent = "You have discounted!! Congratulations!!" : mars.textContent = "eSorry you're not discounted!!";
 
-//     nex <= 100 ? mars.textContent = "You have discounted!! Congratulations!!" : mars.textContent = "eSorry you're not discounted!!";
-// };
+   return 0;
+};
