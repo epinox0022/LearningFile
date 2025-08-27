@@ -99,15 +99,17 @@ shoNmber.textContent = mbers;
 
 // };  
 
-const peCunia = document.getElementById("pecunia");
-const inTrare = document.getElementById("intrare");
-const mars = document.getElementById("marcs");
-
-
-peCunia.onclick= function() {
-   
- let nex = peCunia.value; 
-   const mark = nex >= 100 ? mars.textContent = mars.textContent = "You have discounted!! Congratulations!!" : mars.textContent = "eSorry you're not discounted!!";
-
-   return 0;
+const marK = {
+    mark: 'A',
+    score: 90,
+    totalScore: 100,
+    total: ['100', '90', '80', '70'],
+    grade: {
+        A: 'Excellent',
+        B: 'Very Good',
+        C: 'Good',
+        D: 'Fair'
+    },
 };
+
+console.log(marK.grade.A)
