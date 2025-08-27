@@ -99,7 +99,9 @@ shoNmber.textContent = mbers;
 
 // };  
 
+/*
 const marK = {
+
     mark: 'A',
     score: 90,
     totalScore: 100,
@@ -111,7 +113,24 @@ const marK = {
         D: 'Fair'
     },
 };
+*/
 
+const mark = [
+
+    {
+        emAil: 1,
+        reSult: 'Done',
+        tYpes: 'Report',
+    },
+    
+    {
+        emAil: 2,
+        reSult: 'Pending',
+        tYpes: 'Document',
+    },
+];
 const aRk = document.getElementById('marcs');
+aRk.textContent = `Why you got ${mark[0].emAil} in your exam, that almost like a ${mark[0].tYpes} d`;
 
-aRk.textContent = `Why you got ${marK.mark} in your exam, that almost like ${marK.total[1]} dude`;
+
+/* */ //Use this for your comments and grouping
