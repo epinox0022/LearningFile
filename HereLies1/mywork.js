@@ -112,4 +112,6 @@ const marK = {
     },
 };
 
-console.log(marK.grade.A)
+const aRk = document.getElementById('marcs');
+
+aRk.textContent = `Why you got ${marK.mark} in your exam, that almost like ${marK.total[1]} dude`;
