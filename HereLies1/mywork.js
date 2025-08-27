@@ -138,6 +138,7 @@ const mark = [
 ];
 */
 
+/*
 for(let i = 0; i< 100; i++){
    console.log(`For Loop: ${i}`);
 };
@@ -152,6 +153,20 @@ while(i<= 100){
 mark.forEach(function(mark){
     console.log(mark.email);
 });
+*/
+
+//Construction Function
+function Person(firstName, lastName, dob){
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.dob= new Date(dob);
+}
+
+//Instantiate Object
+const person1 = new Person('mark', 'Zuckerberg','01-02-2005');
+const person2= new Person('mark', 'Zuckerberg', 2005-01-01);
+
+console.log(`This is the name of the person he is ${person1.dob.getFullYear()} he is  ${person1.firstName}`);
 
 
 
@@ -165,16 +180,8 @@ mark.forEach(function(mark){
 
 
 
-
-
-
-
-
-
-
-
-const aRk = document.getElementById('marcs');
-aRk.textContent = `Why you got ${mark[0].emAil} in your exam, that almost like a ${mark[0].tYpes} d`;
+// const aRk = document.getElementById('marcs');
+// aRk.textContent = `Why you got ${mark[0].emAil} in your exam, that almost like a ${mark[0].tYpes} d`;
 
 
 /* */ //Use this for your comments and grouping
