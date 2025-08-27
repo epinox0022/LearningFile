@@ -1,4 +1,5 @@
-/* HYPERTENUSE SOLVER 
+/* 
+HYPERTENUSE SOLVER 
 
 // const inpttdX = document.getElementById('xInput');
 // const inpttdY = document.getElementById('yInput');
@@ -19,7 +20,8 @@
 // };
  */
 
-/* RADIUS CALCULATOR
+/* 
+RADIUS CALCULATOR
 const radiusIn = document.getElementById('RadiusInput');
 const radiusBtn = document.getElementById('Intrare');
 const seen = document.getElementById('seen');
@@ -34,7 +36,8 @@ radiusBtn.onclick = function() {
 }
 */
 
-/* NUMBER GENERATOR
+/* 
+NUMBER GENERATOR
 
 const shoNmber = document.getElementById("nmberShow")
 const oneBtn = document.getElementById("clckerBtn1");
@@ -59,7 +62,8 @@ thrBtn.onclick = function (){
 }
 */
 
-/*RANDOM NUMBER GENERATOR
+/*
+RANDOM NUMBER GENERATOR
 const shoNmber = document.getElementById("nmberShow");
 const geneRator = document.getElementById("genetor");
 const ranBtn = document.getElementById("ranBtn")
@@ -72,32 +76,34 @@ shoNmber.textContent = mbers;
 }
 */
 
-// const shoNmber = document.getElementById("ageInputter");
-// const intrares = document.getElementById("intrare");
-// const evenTus = document.getElementById("Result");
-// const evenTsus = document.getElementById("Resulst");
+/* 
+const shoNmber = document.getElementById("ageInputter");
+const intrares = document.getElementById("intrare");
+const evenTus = document.getElementById("Result");
+const evenTsus = document.getElementById("Resulst");
 
 
 
-// intrares.onclick = function() {
+intrares.onclick = function() {
 
-// // nmber = shoNmber.value;
-// // nmber= Number(nmber);
+nmber = shoNmber.value;
+nmber= Number(nmber);
 
-// // if (nmber >= 18) {
-// //     evenTus.textContent = "You are an adult";
-// // }else {
-// //     evenTus.textContent = "You are too young to take a drive Kid!!";
-// // };
+if (nmber >= 18) {
+    evenTus.textContent = "You are an adult";
+}else {
+    evenTus.textContent = "You are too young to take a drive Kid!!";
+};
 
-// if (shoNmber.checked) {
-//     evenTus.textContent = "You are an adult";
-// }else {
-//     evenTus.textContent = "You are too young to take a drive Kid!!";
-// };
+if (shoNmber.checked) {
+    evenTus.textContent = "You are an adult";
+}else {
+    evenTus.textContent = "You are too young to take a drive Kid!!";
+};
 
 
-// };  
+};  
+*/
 
 /*
 const marK = {
@@ -115,6 +121,7 @@ const marK = {
 };
 */
 
+/*
 const mark = [
 
     {
@@ -129,6 +136,43 @@ const mark = [
         tYpes: 'Document',
     },
 ];
+*/
+
+for(let i = 0; i< 100; i++){
+   console.log(`For Loop: ${i}`);
+};
+
+let i = 0;
+while(i<= 100){
+     console.log(`While Loop: ${i}`);
+     i++;
+}
+
+//forEach, map, filter
+mark.forEach(function(mark){
+    console.log(mark.email);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const aRk = document.getElementById('marcs');
 aRk.textContent = `Why you got ${mark[0].emAil} in your exam, that almost like a ${mark[0].tYpes} d`;
 
