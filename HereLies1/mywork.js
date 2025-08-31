@@ -155,6 +155,7 @@ mark.forEach(function(mark){
 });
 */
 
+/*
 //Construction Function
 function Person(firstName, lastName, dob){
     this.firstName = firstName;
@@ -167,20 +168,39 @@ const person1 = new Person('mark', 'Zuckerberg','01-02-2005');
 const person2= new Person('mark', 'Zuckerberg', 2005-01-01);
 
 console.log(`This is the name of the person he is ${person1.dob.getFullYear()} he is  ${person1.firstName}`);
+*/
+
+const maThin = document.getElementById('ssss');
+const butOn = document.getElementById('intrare');
+let n;
+
+
+
+butOn.onclick = function() {
+
+n = maThin.value;
+n = Number(n);
+
+const color = n > 10 ? 'Blue' : 'Red';
+
+switch(color){
+    case 'Red':
+        console.log('You have a Red color');
+        break;
+    case 'Blue':
+        console.log('You have a Blue color');
+        break;
+        default:
+            console.log('You have no color');
+        break;
+}
+};
 
 
 
 
 
-
-
-
-
-
-
-
-
-// const aRk = document.getElementById('marcs');
+const aRk = document.getElementById('marcs');
 // aRk.textContent = `Why you got ${mark[0].emAil} in your exam, that almost like a ${mark[0].tYpes} d`;
 
 
