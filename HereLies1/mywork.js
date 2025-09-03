@@ -241,12 +241,7 @@ const voltaicCell = {
   ionMovement: "Cations (Ni2+) migrate to cathode, Anions migrate to anode"
 };
 
-// ------------------ OUTPUT ------------------
-console.log("=== Part A: Balanced Redox Reactions ===");
-console.log("In Acidic Solution:");
-redoxReactions.acidic.forEach((eq, i) => console.log(`${i + 1}. ${eq}`));
-console.log("In Basic Solution:");
-redoxReactions.basic.forEach((eq, i) => console.log(`${i + 1}. ${eq}`));
+
 
 
 
