@@ -248,14 +248,6 @@ redoxReactions.acidic.forEach((eq, i) => console.log(`${i + 1}. ${eq}`));
 console.log("In Basic Solution:");
 redoxReactions.basic.forEach((eq, i) => console.log(`${i + 1}. ${eq}`));
 
-console.log("\n=== Part B: Energy Transfer ===");
-for (let i = 1; i <= 10; i++) {
-  console.log(`${i}. ${energyTransfer[i]}`);
-}
-
-console.log("\n=== Part C: Voltaic Cell ===");
-console.log("Overall Reaction:", voltaicCell.overall);
-console.log("Oxidation Half:", voltaicCell.halfReactions.oxidation);
 
 
 
