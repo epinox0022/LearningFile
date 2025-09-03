@@ -256,11 +256,8 @@ for (let i = 1; i <= 10; i++) {
 console.log("\n=== Part C: Voltaic Cell ===");
 console.log("Overall Reaction:", voltaicCell.overall);
 console.log("Oxidation Half:", voltaicCell.halfReactions.oxidation);
-console.log("Reduction Half:", voltaicCell.halfReactions.reduction);
-console.log("Anode:", voltaicCell.electrodes.anode);
-console.log("Cathode:", voltaicCell.electrodes.cathode);
-console.log("Electron Flow:", voltaicCell.electronFlow);
-console.log("Ion Movement:", voltaicCell.ionMovement);
+
+
 
 
 
