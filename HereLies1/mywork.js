@@ -194,19 +194,13 @@ switch(color){
 };
 */ 
 
-
-let x;
 const sTring = 'developer';
+let x;
+
+x = sTring.charAt(0).toUpperCase() + sTring.slice(1);
+console.log(x);
 
 
-x = sTring.substring(1,9).toLowerCase();
-// x = sTring.toLowerCase().substring(0,3);
-const myNewString = 'D' + x;
-
-
-
-
-console.log(myNewString);
 // const maThin = document.getElementById('Inputter');
 // const butOn = document.getElementById('intrare');
 // const aRk = document.getElementById('marcs');
