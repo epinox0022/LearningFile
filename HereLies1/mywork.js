@@ -194,11 +194,19 @@ switch(color){
 };
 */ 
 
+/*
+// Capitalize the first letter of a string
+
 const sTring = 'developer';
 let x;
 
 x = sTring.charAt(0).toUpperCase() + sTring.slice(1);
 console.log(x);
+*/
+
+
+
+
 
 
 // const maThin = document.getElementById('Inputter');
