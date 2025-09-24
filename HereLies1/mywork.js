@@ -204,8 +204,33 @@ x = sTring.charAt(0).toUpperCase() + sTring.slice(1);
 console.log(x);
 */
 
+const x = Math.round(Math.random() * 100 + 1);
+const y = Math.round(Math.random() * 50 + 1);
+// Sum output
+const sUm = x + y;
+const sUmOutput = `The sum of ${x} and ${y} = ${sUm}`;
 
+// Product output
+const pRoduct = x * y;
+const pRoductOutput = ` The product of ${x} and ${y} = ${pRoduct}`;
 
+// Difference output
+const dIfference = x - y;
+const dIfferenceOutput = ` The difference of ${x} and ${y} = ${dIfference}`;
+
+// Quotient output
+const qUotient = x / y;
+const qUotientOutput = ` The quotient of ${x} and ${y} = ${qUotient}`;
+
+// Remainder output
+const rEmainder = x % y;
+const rEmainderOutput = ` The remainder of ${x} and ${y} = ${rEmainder}`;
+
+console.log(sUmOutput);
+console.log(pRoductOutput);
+console.log(dIfferenceOutput);
+console.log(qUotientOutput);
+console.log(rEmainderOutput);
 
 
 
