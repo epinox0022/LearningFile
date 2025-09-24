@@ -195,57 +195,12 @@ switch(color){
 */ 
 
 
+let x;
+const s = new String('hekkoo');
 
+x = s[2].toUpperCase();
 
-// Chemistry and Physics Homework Solver
-// --------------------------------------
-
-// Part A: Balanced Redox Reactions
-const redoxReactions = {
-  acidic: [
-    "5 H2C2O4 + 2 MnO4^- + 6 H+ → 10 CO2 + 2 Mn2+ + 8 H2O",
-    "3 H5IO6 + 2 Cr → 3 IO3^- + 2 Cr3+ + 6 H2O + 4 H+"
-  ],
-  basic: [
-    "3 Br^- + 2 MnO4^- + H2O → 3 BrO3^- + 2 MnO2 + 2 OH^-",
-    "3 Se + 4 Cr(OH)3 + 6 OH^- → 3 SeO3^2- + 4 Cr + 6 H2O"
-  ]
-};
-
-// Part B: Energy Transfer (A = Conduction, B = Radiation, C = Convection)
-const energyTransfer = {
-  1: "C - Convection (hot water flowing)",
-  2: "B - Radiation (sun melts snow)",
-  3: "A - Conduction (blacksmith heating metal)",
-  4: "A - Conduction (coffee mug warm)",
-  5: "B - Radiation (marshmallows toasted)",
-  6: "B - Radiation (laser beam)",
-  7: "A - Conduction (touching spoon in boiling water)",
-  8: "A - Conduction (heat into insulation)",
-  9: "B - Radiation (fireplace heating room)",
-  10: "C - Convection (water boiling)"
-};
-
-// Part C: Voltaic Cell
-const voltaicCell = {
-  overall: "Cd(s) + Ni2+(aq) → Cd2+(aq) + Ni(s)",
-  halfReactions: {
-    oxidation: "Cd(s) → Cd2+(aq) + 2e^-",
-    reduction: "Ni2+(aq) + 2e^- → Ni(s)"
-  },
-  electrodes: {
-    anode: "Cd (oxidation, negative electrode)",
-    cathode: "Ni (reduction, positive electrode)"
-  },
-  electronFlow: "Electrons flow from Cd electrode (anode) to Ni electrode (cathode)",
-  ionMovement: "Cations (Ni2+) migrate to cathode, Anions migrate to anode"
-};
-
-
-
-
-
-
+console.log(x);
 
 
 // const maThin = document.getElementById('Inputter');
