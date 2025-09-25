@@ -204,8 +204,12 @@ x = sTring.charAt(0).toUpperCase() + sTring.slice(1);
 console.log(x);
 */
 
+/*
+// Random Math operations
+
 const x = Math.round(Math.random() * 100 + 1);
 const y = Math.round(Math.random() * 50 + 1);
+
 // Sum output
 const sUm = x + y;
 const sUmOutput = `The sum of ${x} and ${y} = ${sUm}`;
@@ -231,6 +235,18 @@ console.log(pRoductOutput);
 console.log(dIfferenceOutput);
 console.log(qUotientOutput);
 console.log(rEmainderOutput);
+*/
+
+const fruits = ['mango', 'banana','grapes'];
+
+fruits[fruits.length] = 'orange';
+fruits.pop('saging');
+
+console.log(fruits);
+
+
+
+
 
 
 
