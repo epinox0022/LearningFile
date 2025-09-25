@@ -237,10 +237,10 @@ console.log(qUotientOutput);
 console.log(rEmainderOutput);
 */
 
-const fruits = ['mango', 'banana','grapes'];
+const fruits = ['mango'];
 
 fruits[fruits.length] = 'orange';
-fruits.pop('saging');
+
 
 console.log(fruits);
 
