@@ -237,12 +237,13 @@ console.log(qUotientOutput);
 console.log(rEmainderOutput);
 */
 
-const fruits = ['mango'];
-fruits[fruits.length] = 'orange';
-fruits.pop();
+const arr = [1, 2, 3, 4, 5];
 
-console.log(fruits);
+let x =arr.reverse();
+arr.unshift(6);
+arr.push(0);
 
+console.log(x);
 
 
 
