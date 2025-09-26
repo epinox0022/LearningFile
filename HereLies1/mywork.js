@@ -237,11 +237,16 @@ console.log(qUotientOutput);
 console.log(rEmainderOutput);
 */
 
-const arr = [1, 2, 3, 4, 5];
+// const arr = [1, 2, 3, 4, 5];
 
-let x =arr.reverse();
-arr.unshift(6);
-arr.push(0);
+// let x =arr.reverse();
+// arr.unshift(6);
+// arr.push(0);
+
+const arr1 = [1, 2, 3, 4, 5];
+const arr2 = [5, 6, 7, 8, 9, 10];
+
+let x = arr1.splice(0, 4).concat(arr2);
 
 console.log(x);
 
