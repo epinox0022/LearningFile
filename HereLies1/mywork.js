@@ -237,11 +237,13 @@ console.log(qUotientOutput);
 console.log(rEmainderOutput);
 */
 
-// const arr = [1, 2, 3, 4, 5];
+/*
+// Array methods
+const arr = [1, 2, 3, 4, 5];
 
-// let x =arr.reverse();
-// arr.unshift(6);
-// arr.push(0);
+let x =arr.reverse();
+arr.unshift(6);
+arr.push(0);
 
 const arr1 = [1, 2, 3, 4, 5];
 const arr2 = [5, 6, 7, 8, 9, 10];
@@ -249,10 +251,27 @@ const arr2 = [5, 6, 7, 8, 9, 10];
 let x = arr1.splice(0, 4).concat(arr2);
 
 console.log(x);
+*/
 
+const obj = {
+    name: 'mark',
+    age:'20',
+    status: {
+        current: 'single',
+        previous: 'complicated',
+    },
+};
+ 
+let x;
 
+obj.greet = function() {
+    console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+}
 
+obj.greet();
 
+x = obj;
+console.log(x);
 
 
 // const maThin = document.getElementById('Inputter');
