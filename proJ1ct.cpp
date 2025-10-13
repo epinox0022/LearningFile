@@ -172,22 +172,44 @@
 //     return 0;
 // }
 
-#include <iostream>
-using namespace std;
+// #include <iostream>
+// using namespace std;
 
-void checkBoolean(int num)
-{
-    if (num == 0)
-        cout << "FALSE" << endl;
-    else
-        cout << "TRUE" << endl;
-}
+// void checkBoolean(int num)
+// {
+//     if (num == 0)
+//         cout << "FALSE" << endl;
+//     else
+//         cout << "TRUE" << endl;
+// }
 
-int main()
-{
-    int value;
-    cout << "Enter an integer: ";
-    cin >> value;
-    checkBoolean(value);
-    return 0;
-}
+// int main()
+// {
+//     int value;
+//     cout << "Enter an integer: ";
+//     cin >> value;
+//     checkBoolean(value);
+//     return 0;
+// }
+
+// #include <iostream>
+// using namespace std;
+
+// void checkCase(char letter)
+// {
+//     if (letter >= 'a' && letter <= 'z')
+//         cout << "LOWER CASE" << endl;
+//     else if (letter >= 'A' && letter <= 'Z')
+//         cout << "UPPER CASE" << endl;
+//     else
+//         cout << "Not a letter." << endl;
+// }
+
+// int main()
+// {
+//     char ch;
+//     cout << "Enter a letter: ";
+//     cin >> ch;
+//     checkCase(ch);
+//     return 0;
+// }
