@@ -213,3 +213,33 @@
 //     checkCase(ch);
 //     return 0;
 // }
+
+#include <iostream>
+using namespace std;
+
+void bingoLetter(int number)
+{
+    if (number >= 1 && number <= 15)
+        cout << "B" << endl;
+    else if (number >= 16 && number <= 30)
+        cout << "I" << endl;
+    else if (number >= 31 && number <= 45)
+        cout << "N" << endl;
+    else if (number >= 46 && number <= 60)
+        cout << "G" << endl;
+    else if (number >= 61 && number <= 75)
+        cout << "O" << endl;
+    else
+        cout << "Invalid number! Please enter a value from 1 to 75." << endl;
+}
+
+int main()
+{
+    int num;
+    cout << "Enter a number (1-75): ";
+    cin >> num;
+
+    bingoLetter(num);
+
+    return 0;
+}
