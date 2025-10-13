@@ -1,78 +1,153 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 int main()
 {
-    double L, w0, w1, w2;
-    int choice;
+    double m = 0, W = 0, thetaDeg = 0, thetaRad = 0;
+    double Ff = 0, Nf = 0, R = 0, mu = 0, g = 9.81;
+    bool hasMass = false, hasWeight = false, hasAngle = false;
+    bool hasFf = false, hasNf = false, hasMu = false;
 
-    cout << "Distributed Load Calculator\n";
-    cout << "1. Rectangular Load\n";
-    cout << "2. Triangular Load\n";
-    cout << "3. Trapezoidal Load\n";
-    cout << "Enter load type (1-3): ";
-    cin >> choice;
+    cout << "=== ANGLE OF FRICTION SYSTEM CALCULATOR ===\n";
+    cout << "Enter values you know (enter 0 if unknown):\n";
 
-    if (choice == 1)
+    cout << "Mass (kg): ";
+    cin >> m;
+    if (m > 0)
+        hasMass = true;
+
+    cout << "Weight (N): ";
+    cin >> W;
+    if (W > 0)
+        hasWeight = true;
+
+    cout << "Angle (degrees): ";
+    cin >> thetaDeg;
+    if (thetaDeg > 0)
+        hasAngle = true;
+
+    cout << "Normal Force (Nf) [N]: ";
+    cin >> Nf;
+    if (Nf > 0)
+        hasNf = true;
+
+    cout << "Frictional Force (Ff) [N]: ";
+    cin >> Ff;
+    if (Ff > 0)
+        hasFf = true;
+
+    cout << "Coefficient of Friction (μ): ";
+    cin >> mu;
+    if (mu > 0)
+        hasMu = true;
+
+    // --- Step 1: compute weight if mass given ---
+    if (!hasWeight && hasMass)
     {
-        // Rectangular Load
-        cout << "Enter length L (m): ";
-        cin >> L;
-        cout << "Enter load intensity w0 (kN/m): ";
-        cin >> w0;
-
-        double R = w0 * L;
-        double x = L / 2.0;
-
-        cout << "\nResultant Load R = " << R << " kN";
-        cout << "\nLocation from left end = " << x << " m\n";
+        W = m * g;
+        hasWeight = true;
     }
 
-    else if (choice == 2)
+    // --- Step 2: compute mass if weight given ---
+    if (!hasMass && hasWeight)
     {
-        // Triangular Load
-        cout << "Enter length L (m): ";
-        cin >> L;
-        cout << "Enter maximum load w0 (kN/m): ";
-        cin >> w0;
-
-        double R = 0.5 * w0 * L;
-        double x = (L / 3.0); // from larger end
-
-        cout << "\nResultant Load R = " << R << " kN";
-        cout << "\nLocation from larger end = " << x << " m\n";
+        m = W / g;
+        hasMass = true;
     }
 
-    else if (choice == 3)
+    // --- Step 3: if angle is missing but μ is known ---
+    if (!hasAngle && hasMu)
     {
-        // Trapezoidal Load
-        cout << "Enter length L (m): ";
-        cin >> L;
-        cout << "Enter w01 (kN/m) smaller side: ";
-        cin >> w1;
-        cout << "Enter w02 (kN/m) larger side: ";
-        cin >> w2;
-
-        // Decompose into rectangle + triangle
-        double R1 = w1 * L;              // rectangular part
-        double R2 = 0.5 * (w2 - w1) * L; // triangular part
-
-        // Distances from left end
-        double x1 = L / 2.0;
-        double x2 = (2.0 * L) / 3.0;
-
-        // Resultant and its position (using moment balance)
-        double R = R1 + R2;
-        double x = (R1 * x1 + R2 * x2) / R;
-
-        cout << "\nResultant Load R = " << R << " kN";
-        cout << "\nLocation from left end = " << x << " m\n";
+        thetaRad = atan(mu);
+        thetaDeg = thetaRad * 180.0 / M_PI;
+        hasAngle = true;
     }
 
-    else
+    // --- Step 4: if μ missing but angle known ---
+    if (!hasMu && hasAngle)
     {
-        cout << "Invalid choice!";
+        thetaRad = thetaDeg * M_PI / 180.0;
+        mu = tan(thetaRad);
+        hasMu = true;
     }
+
+    // --- Step 5: if both W and angle known, compute Nf and Ff ---
+    if (hasWeight && hasAngle)
+    {
+        thetaRad = thetaDeg * M_PI / 180.0;
+        Nf = W * cos(thetaRad);
+        Ff = W * sin(thetaRad);
+        hasNf = true;
+        hasFf = true;
+    }
+
+    // --- Step 6: if Nf known and μ known, compute Ff ---
+    if (hasNf && hasMu && !hasFf)
+    {
+        Ff = mu * Nf;
+        hasFf = true;
+    }
+
+    // --- Step 7: if Ff and Nf known, compute μ ---
+    if (hasFf && hasNf && !hasMu)
+    {
+        mu = Ff / Nf;
+        hasMu = true;
+    }
+
+    // --- Step 8: Resultant R (always equal to W) ---
+    if (hasWeight)
+        R = W;
+
+    // --- Step 9: Display results ---
+    cout << "\n=== RESULTS ===\n";
+    cout << "Mass (m): " << m << " kg\n";
+    cout << "Weight (W): " << W << " N\n";
+    cout << "Angle (θ): " << thetaDeg << "°\n";
+    cout << "Normal Force (Nf): " << Nf << " N\n";
+    cout << "Frictional Force (Ff): " << Ff << " N\n";
+    cout << "Resultant Force (R): " << R << " N\n";
+    cout << "Coefficient of Friction (μ): " << mu << endl;
 
     return 0;
 }
+
+// #include <iostream>
+// #include <cstdlib>
+// #include <ctime>
+// using namespace std;
+
+// int main()
+// {
+//     srand(time(0)); // seed random number generator
+
+//     int secret = rand() % 100 + 1; // random number between 1 and 100
+//     int guess;
+//     int tries = 0;
+
+//     cout << "=============================\n";
+//     cout << " 🎯 GUESS THE NUMBER GAME 🎯\n";
+//     cout << "=============================\n";
+//     cout << "I'm thinking of a number between 1 and 100.\n";
+//     cout << "Can you guess it?\n\n";
+
+//     do
+//     {
+//         cout << "Enter your guess: ";
+//         cin >> guess;
+//         tries++;
+
+//         if (guess > secret)
+//             cout << "Too high! Try again.\n";
+//         else if (guess < secret)
+//             cout << "Too low! Try again.\n";
+//         else
+//             cout << "\n🎉 Congratulations! You got it in " << tries << " tries!\n";
+
+//     } while (guess != secret);
+
+//     cout << "The secret number was: " << secret << endl;
+//     cout << "Thanks for playing!\n";
+//     return 0;
+// }
