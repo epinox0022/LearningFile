@@ -152,15 +152,35 @@
 //     return 0;
 // }
 
+// #include <iostream>
+// using namespace std;
+
+// void checkNumber(int num)
+// {
+//     if (num >= 0)
+//         cout << "POSITIVE" << endl;
+//     else
+//         cout << "NEGATIVE" << endl;
+// }
+
+// int main()
+// {
+//     int value;
+//     cout << "Enter an integer: ";
+//     cin >> value;
+//     checkNumber(value);
+//     return 0;
+// }
+
 #include <iostream>
 using namespace std;
 
-void checkNumber(int num)
+void checkBoolean(int num)
 {
-    if (num >= 0)
-        cout << "POSITIVE" << endl;
+    if (num == 0)
+        cout << "FALSE" << endl;
     else
-        cout << "NEGATIVE" << endl;
+        cout << "TRUE" << endl;
 }
 
 int main()
@@ -168,6 +188,6 @@ int main()
     int value;
     cout << "Enter an integer: ";
     cin >> value;
-    checkNumber(value);
+    checkBoolean(value);
     return 0;
 }
