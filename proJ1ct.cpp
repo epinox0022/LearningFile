@@ -1,117 +1,102 @@
-// #include <iostream>
-// #include <cmath>
-// using namespace std;
+#include <iostream>
+#include <math.h> // for sin, cos, tan, atan
+using namespace std;
 
-// int main()
-// {
-//     double m = 0, W = 0, thetaDeg = 0, thetaRad = 0;
-//     double Ff = 0, Nf = 0, R = 0, mu = 0, g = 9.81;
-//     bool hasMass = false, hasWeight = false, hasAngle = false;
-//     bool hasFf = false, hasNf = false, hasMu = false;
+int main()
+{
+    double m = 0, W = 0, thetaDeg = 0, mu = 0, Nf = 0, Ff = 0;
+    double g = 9.81;
+    bool hasMass = false, hasWeight = false, hasAngle = false, hasMu = false;
+    bool hasNf = false, hasFf = false;
 
-//     cout << "=== ANGLE OF FRICTION SYSTEM CALCULATOR ===\n";
-//     cout << "Enter values you know (enter 0 if unknown):\n";
+    cout << "Enter known values (enter 0 if unknown):\n";
+    cout << "Mass (kg): ";
+    cin >> m;
+    cout << "Weight (N): ";
+    cin >> W;
+    cout << "Angle (deg): ";
+    cin >> thetaDeg;
+    cout << "Coefficient of Friction (μ): ";
+    cin >> mu;
+    cout << "Normal Force (N): ";
+    cin >> Nf;
+    cout << "Frictional Force (N): ";
+    cin >> Ff;
 
-//     cout << "Mass (kg): ";
-//     cin >> m;
-//     if (m > 0)
-//         hasMass = true;
+    if (m > 0)
+        hasMass = true;
+    if (W > 0)
+        hasWeight = true;
+    if (thetaDeg > 0)
+        hasAngle = true;
+    if (mu > 0)
+        hasMu = true;
+    if (Nf > 0)
+        hasNf = true;
+    if (Ff > 0)
+        hasFf = true;
 
-//     cout << "Weight (N): ";
-//     cin >> W;
-//     if (W > 0)
-//         hasWeight = true;
+    // Compute missing mass or weight
+    if (!hasWeight && hasMass)
+    {
+        W = m * g;
+        hasWeight = true;
+    }
+    else if (!hasMass && hasWeight)
+    {
+        m = W / g;
+        hasMass = true;
+    }
 
-//     cout << "Angle (degrees): ";
-//     cin >> thetaDeg;
-//     if (thetaDeg > 0)
-//         hasAngle = true;
+    // Compute missing angle or coefficient of friction
+    if (!hasAngle && hasMu)
+    {
+        thetaDeg = atan(mu) * 180 / M_PI;
+        hasAngle = true;
+    }
+    else if (!hasMu && hasAngle)
+    {
+        mu = tan(thetaDeg * M_PI / 180);
+        hasMu = true;
+    }
 
-//     cout << "Normal Force (Nf) [N]: ";
-//     cin >> Nf;
-//     if (Nf > 0)
-//         hasNf = true;
+    // Compute Normal Force
+    if (!hasNf && hasWeight && hasAngle)
+    {
+        double thetaRad = thetaDeg * M_PI / 180;
+        Nf = W * cos(thetaRad);
+        hasNf = true;
+    }
+    else if (!hasNf && hasWeight && !hasAngle)
+    {
+        Nf = W;
+        hasNf = true;
+    }
 
-//     cout << "Frictional Force (Ff) [N]: ";
-//     cin >> Ff;
-//     if (Ff > 0)
-//         hasFf = true;
+    // Compute Frictional Force
+    if (!hasFf && hasMu && hasNf)
+    {
+        Ff = mu * Nf;
+        hasFf = true;
+    }
+    else if (!hasFf && hasWeight && hasAngle && !hasMu)
+    {
+        double thetaRad = thetaDeg * M_PI / 180;
+        Ff = W * sin(thetaRad);
+        hasFf = true;
+    }
 
-//     cout << "Coefficient of Friction (μ): ";
-//     cin >> mu;
-//     if (mu > 0)
-//         hasMu = true;
+    // Results
+    cout << "\n--- Results ---\n";
+    cout << "Mass (kg): " << m << endl;
+    cout << "Weight (N): " << W << endl;
+    cout << "Angle (deg): " << thetaDeg << endl;
+    cout << "Coefficient of Friction (μ): " << mu << endl;
+    cout << "Normal Force (N): " << Nf << endl;
+    cout << "Frictional Force (N): " << Ff << endl;
 
-//     // --- Step 1: compute weight if mass given ---
-//     if (!hasWeight && hasMass)
-//     {
-//         W = m * g;
-//         hasWeight = true;
-//     }
-
-//     // --- Step 2: compute mass if weight given ---
-//     if (!hasMass && hasWeight)
-//     {
-//         m = W / g;
-//         hasMass = true;
-//     }
-
-//     // --- Step 3: if angle is missing but μ is known ---
-//     if (!hasAngle && hasMu)
-//     {
-//         thetaRad = atan(mu);
-//         thetaDeg = thetaRad * 180.0 / M_PI;
-//         hasAngle = true;
-//     }
-
-//     // --- Step 4: if μ missing but angle known ---
-//     if (!hasMu && hasAngle)
-//     {
-//         thetaRad = thetaDeg * M_PI / 180.0;
-//         mu = tan(thetaRad);
-//         hasMu = true;
-//     }
-
-//     // --- Step 5: if both W and angle known, compute Nf and Ff ---
-//     if (hasWeight && hasAngle)
-//     {
-//         thetaRad = thetaDeg * M_PI / 180.0;
-//         Nf = W * cos(thetaRad);
-//         Ff = W * sin(thetaRad);
-//         hasNf = true;
-//         hasFf = true;
-//     }
-
-//     // --- Step 6: if Nf known and μ known, compute Ff ---
-//     if (hasNf && hasMu && !hasFf)
-//     {
-//         Ff = mu * Nf;
-//         hasFf = true;
-//     }
-
-//     // --- Step 7: if Ff and Nf known, compute μ ---
-//     if (hasFf && hasNf && !hasMu)
-//     {
-//         mu = Ff / Nf;
-//         hasMu = true;
-//     }
-
-//     // --- Step 8: Resultant R (always equal to W) ---
-//     if (hasWeight)
-//         R = W;
-
-//     // --- Step 9: Display results ---
-//     cout << "\n=== RESULTS ===\n";
-//     cout << "Mass (m): " << m << " kg\n";
-//     cout << "Weight (W): " << W << " N\n";
-//     cout << "Angle (θ): " << thetaDeg << "°\n";
-//     cout << "Normal Force (Nf): " << Nf << " N\n";
-//     cout << "Frictional Force (Ff): " << Ff << " N\n";
-//     cout << "Resultant Force (R): " << R << " N\n";
-//     cout << "Coefficient of Friction (μ): " << mu << endl;
-
-//     return 0;
-// }
+    return 0;
+}
 
 // #include <iostream>
 // #include <cstdlib>
@@ -214,32 +199,78 @@
 //     return 0;
 // }
 
-#include <iostream>
-using namespace std;
+// #include <iostream>
+// using namespace std;
 
-void bingoLetter(int number)
-{
-    if (number >= 1 && number <= 15)
-        cout << "B" << endl;
-    else if (number >= 16 && number <= 30)
-        cout << "I" << endl;
-    else if (number >= 31 && number <= 45)
-        cout << "N" << endl;
-    else if (number >= 46 && number <= 60)
-        cout << "G" << endl;
-    else if (number >= 61 && number <= 75)
-        cout << "O" << endl;
-    else
-        cout << "Invalid number! Please enter a value from 1 to 75." << endl;
-}
+// void bingoLetter(int number)
+// {
+//     if (number >= 1 && number <= 15)
+//         cout << "B" << endl;
+//     else if (number >= 16 && number <= 30)
+//         cout << "I" << endl;
+//     else if (number >= 31 && number <= 45)
+//         cout << "N" << endl;
+//     else if (number >= 46 && number <= 60)
+//         cout << "G" << endl;
+//     else if (number >= 61 && number <= 75)
+//         cout << "O" << endl;
+//     else
+//         cout << "Invalid number! Please enter a value from 1 to 75." << endl;
+// }
 
-int main()
-{
-    int num;
-    cout << "Enter a number (1-75): ";
-    cin >> num;
+// int main()
+// {
+//     int num2;
+//     cout << "Enter a number (1-75): ";
+//     cin >> num2;
 
-    bingoLetter(num);
+//     bingoLetter(num2);
 
-    return 0;
-}
+//     return 0;
+// }
+// 23
+
+// #include <iostream>
+// #include <iomanip>
+// using namespace std;
+
+// #include <iostream>
+// #include <iomanip>
+// using namespace std;
+
+// void main()
+// {
+//     int rows = 3, columns = 4;
+//     int numbers[3][4];
+//     int count = 1;
+
+//     for (int i = 0; i < rows; ++i)
+//     {
+//         for (int j = 0; j < columns; ++j)
+//         {
+//             numbers[i][j] = count++;
+//             cout << setw(5) << numbers[i][j];
+//         }
+//         cout << "\n";
+//     }
+
+//     return 0;
+// }
+
+// {
+//     int rows = 3, columns = 4;
+//     int numbers[3][4];
+//     int count = 1;
+
+//     for (int i = 0; i < rows; ++i)
+//     {
+//         for (int j = 0; j < columns; ++j)
+//         {
+//             numbers[i][j] = count++;
+//             cout << setw(5) << numbers[i][j];
+//         }
+//         cout << "\n";
+//     }
+
+//     return 0;
+// }

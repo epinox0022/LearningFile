@@ -253,25 +253,27 @@ let x = arr1.splice(0, 4).concat(arr2);
 console.log(x);
 */
 
-const obj = {
-    name: 'mark',
-    age:'20',
-    status: {
-        current: 'single',
-        previous: 'complicated',
-    },
-};
+// const obj = {
+//     name: 'mark',
+//     age:'20',
+//     status: {
+//         current: 'single',
+//         previous: 'complicated',
+//     },
+// };
  
-let x;
+// let x;
 
-obj.greet = function() {
-    console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
-}
+// obj.greet = function() {
+//     console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+// }
 
-obj.greet();
+// obj.greet();
 
-x = obj;
-console.log(x);
+// x = obj;
+// console.log(x);
+
+
 
 
 // const maThin = document.getElementById('Inputter');

@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/HereLies2/style.css" />
     <title>Document</title>
   </head>
-  <body>
+  <!-- <body> -->
 
 
 
@@ -56,7 +56,7 @@
     
   </div> -->
 
-
+<!-- 
   <div class="Equinox-bg">
     <div class="Equinox-frmt">
       <h1>
@@ -66,7 +66,27 @@
         <span>Equinox</span>
       </h1>
     </div>
-  </div>
+  </div> -->
+
+
+<body style="text-align: center; margin-top: 50px;">
+
+  <h2>Click the button to show your name</h2>
+  
+  <button onclick="showName()">Click Me</button>
+
+  <p id="nameDisplay"></p>
+
+  <script>
+    function showName() {
+      // You can change your name here
+      let name = "Epinox Lucerence";
+      document.getElementById("nameDisplay").innerText = "Hello, " + name + "!";
+    }
+  </script>
+
+
+
 
 
 
