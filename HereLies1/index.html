@@ -76,12 +76,18 @@
   <button onclick="showName()">Click Me</button>
 
   <p id="nameDisplay"></p>
+  <input type="text" name="How Old are you?" id="mice">
 
   <script>
+
     function showName() {
-      // You can change your name here
+      
       let name = "Epinox Lucerence";
       document.getElementById("nameDisplay").innerText = "Hello, " + name + "!";
+
+      document.getElementById('mice').value = "I am 15";
+
+  
     }
   </script>
 
