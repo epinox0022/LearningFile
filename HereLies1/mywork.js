@@ -1,6 +1,6 @@
 let chAr = 'developer';
 let x;
-x = chAr.substring(0,1).toUpperCase() + chAr.substring(1);
+x = chAr.substring(0,1) + chAr.substring(1,9).toUpperCase() ;
 console.log(x);
 
 
