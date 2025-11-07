@@ -1,5 +1,5 @@
 #include <iostream>
-#include <math.h> // for sin, cos, tan, atan
+#include <math.h>
 using namespace std;
 
 int main()
@@ -36,7 +36,6 @@ int main()
     if (Ff > 0)
         hasFf = true;
 
-    // Compute missing mass or weight
     if (!hasWeight && hasMass)
     {
         W = m * g;
@@ -48,7 +47,6 @@ int main()
         hasMass = true;
     }
 
-    // Compute missing angle or coefficient of friction
     if (!hasAngle && hasMu)
     {
         thetaDeg = atan(mu) * 180 / M_PI;
@@ -60,7 +58,6 @@ int main()
         hasMu = true;
     }
 
-    // Compute Normal Force
     if (!hasNf && hasWeight && hasAngle)
     {
         double thetaRad = thetaDeg * M_PI / 180;
@@ -73,7 +70,6 @@ int main()
         hasNf = true;
     }
 
-    // Compute Frictional Force
     if (!hasFf && hasMu && hasNf)
     {
         Ff = mu * Nf;
@@ -86,191 +82,179 @@ int main()
         hasFf = true;
     }
 
-    // Results
-    cout << "\n--- Results ---\n";
-    cout << "Mass (kg): " << m << endl;
-    cout << "Weight (N): " << W << endl;
-    cout << "Angle (deg): " << thetaDeg << endl;
-    cout << "Coefficient of Friction (μ): " << mu << endl;
-    cout << "Normal Force (N): " << Nf << endl;
-    cout << "Frictional Force (N): " << Ff << endl;
+    // #include <iostream>
+    // #include <cstdlib>
+    // #include <ctime>
+    // using namespace std;
 
-    return 0;
-}
+    // int main()
+    // {
+    //     srand(time(0)); // seed random number generator
 
-// #include <iostream>
-// #include <cstdlib>
-// #include <ctime>
-// using namespace std;
+    //     int secret = rand() % 100 + 1; // random number between 1 and 100
+    //     int guess;
+    //     int tries = 0;
 
-// int main()
-// {
-//     srand(time(0)); // seed random number generator
+    //     cout << "=============================\n";
+    //     cout << " 🎯 GUESS THE NUMBER GAME 🎯\n";
+    //     cout << "=============================\n";
+    //     cout << "I'm thinking of a number between 1 and 100.\n";
+    //     cout << "Can you guess it?\n\n";
 
-//     int secret = rand() % 100 + 1; // random number between 1 and 100
-//     int guess;
-//     int tries = 0;
+    //     do
+    //     {
+    //         cout << "Enter your guess: ";
+    //         cin >> guess;
+    //         tries++;
 
-//     cout << "=============================\n";
-//     cout << " 🎯 GUESS THE NUMBER GAME 🎯\n";
-//     cout << "=============================\n";
-//     cout << "I'm thinking of a number between 1 and 100.\n";
-//     cout << "Can you guess it?\n\n";
+    //         if (guess > secret)
+    //             cout << "Too high! Try again.\n";
+    //         else if (guess < secret)
+    //             cout << "Too low! Try again.\n";
+    //         else
+    //             cout << "\n🎉 Congratulations! You got it in " << tries << " tries!\n";
 
-//     do
-//     {
-//         cout << "Enter your guess: ";
-//         cin >> guess;
-//         tries++;
+    //     } while (guess != secret);
 
-//         if (guess > secret)
-//             cout << "Too high! Try again.\n";
-//         else if (guess < secret)
-//             cout << "Too low! Try again.\n";
-//         else
-//             cout << "\n🎉 Congratulations! You got it in " << tries << " tries!\n";
+    //     cout << "The secret number was: " << secret << endl;
+    //     cout << "Thanks for playing!\n";
+    //     return 0;
+    // }
 
-//     } while (guess != secret);
+    // #include <iostream>
+    // using namespace std;
 
-//     cout << "The secret number was: " << secret << endl;
-//     cout << "Thanks for playing!\n";
-//     return 0;
-// }
+    // void checkNumber(int num)
+    // {
+    //     if (num >= 0)
+    //         cout << "POSITIVE" << endl;
+    //     else
+    //         cout << "NEGATIVE" << endl;
+    // }
 
-// #include <iostream>
-// using namespace std;
+    // int main()
+    // {
+    //     int value;
+    //     cout << "Enter an integer: ";
+    //     cin >> value;
+    //     checkNumber(value);
+    //     return 0;
+    // }
 
-// void checkNumber(int num)
-// {
-//     if (num >= 0)
-//         cout << "POSITIVE" << endl;
-//     else
-//         cout << "NEGATIVE" << endl;
-// }
+    // #include <iostream>
+    // using namespace std;
 
-// int main()
-// {
-//     int value;
-//     cout << "Enter an integer: ";
-//     cin >> value;
-//     checkNumber(value);
-//     return 0;
-// }
+    // void checkBoolean(int num)
+    // {
+    //     if (num == 0)
+    //         cout << "FALSE" << endl;
+    //     else
+    //         cout << "TRUE" << endl;
+    // }
 
-// #include <iostream>
-// using namespace std;
+    // int main()
+    // {
+    //     int value;
+    //     cout << "Enter an integer: ";
+    //     cin >> value;
+    //     checkBoolean(value);
+    //     return 0;
+    // }
 
-// void checkBoolean(int num)
-// {
-//     if (num == 0)
-//         cout << "FALSE" << endl;
-//     else
-//         cout << "TRUE" << endl;
-// }
+    // #include <iostream>
+    // using namespace std;
 
-// int main()
-// {
-//     int value;
-//     cout << "Enter an integer: ";
-//     cin >> value;
-//     checkBoolean(value);
-//     return 0;
-// }
+    // void checkCase(char letter)
+    // {
+    //     if (letter >= 'a' && letter <= 'z')
+    //         cout << "LOWER CASE" << endl;
+    //     else if (letter >= 'A' && letter <= 'Z')
+    //         cout << "UPPER CASE" << endl;
+    //     else
+    //         cout << "Not a letter." << endl;
+    // }
 
-// #include <iostream>
-// using namespace std;
+    // int main()
+    // {
+    //     char ch;
+    //     cout << "Enter a letter: ";
+    //     cin >> ch;
+    //     checkCase(ch);
+    //     return 0;
+    // }
 
-// void checkCase(char letter)
-// {
-//     if (letter >= 'a' && letter <= 'z')
-//         cout << "LOWER CASE" << endl;
-//     else if (letter >= 'A' && letter <= 'Z')
-//         cout << "UPPER CASE" << endl;
-//     else
-//         cout << "Not a letter." << endl;
-// }
+    // #include <iostream>
+    // using namespace std;
 
-// int main()
-// {
-//     char ch;
-//     cout << "Enter a letter: ";
-//     cin >> ch;
-//     checkCase(ch);
-//     return 0;
-// }
+    // void bingoLetter(int number)
+    // {
+    //     if (number >= 1 && number <= 15)
+    //         cout << "B" << endl;
+    //     else if (number >= 16 && number <= 30)
+    //         cout << "I" << endl;
+    //     else if (number >= 31 && number <= 45)
+    //         cout << "N" << endl;
+    //     else if (number >= 46 && number <= 60)
+    //         cout << "G" << endl;
+    //     else if (number >= 61 && number <= 75)
+    //         cout << "O" << endl;
+    //     else
+    //         cout << "Invalid number! Please enter a value from 1 to 75." << endl;
+    // }
 
-// #include <iostream>
-// using namespace std;
+    // int main()
+    // {
+    //     int num2;
+    //     cout << "Enter a number (1-75): ";
+    //     cin >> num2;
 
-// void bingoLetter(int number)
-// {
-//     if (number >= 1 && number <= 15)
-//         cout << "B" << endl;
-//     else if (number >= 16 && number <= 30)
-//         cout << "I" << endl;
-//     else if (number >= 31 && number <= 45)
-//         cout << "N" << endl;
-//     else if (number >= 46 && number <= 60)
-//         cout << "G" << endl;
-//     else if (number >= 61 && number <= 75)
-//         cout << "O" << endl;
-//     else
-//         cout << "Invalid number! Please enter a value from 1 to 75." << endl;
-// }
+    //     bingoLetter(num2);
 
-// int main()
-// {
-//     int num2;
-//     cout << "Enter a number (1-75): ";
-//     cin >> num2;
+    //     return 0;
+    // }
+    // 23
 
-//     bingoLetter(num2);
+    // #include <iostream>
+    // #include <iomanip>
+    // using namespace std;
 
-//     return 0;
-// }
-// 23
+    // #include <iostream>
+    // #include <iomanip>
+    // using namespace std;
 
-// #include <iostream>
-// #include <iomanip>
-// using namespace std;
+    // void main()
+    // {
+    //     int rows = 3, columns = 4;
+    //     int numbers[3][4];
+    //     int count = 1;
 
-// #include <iostream>
-// #include <iomanip>
-// using namespace std;
+    //     for (int i = 0; i < rows; ++i)
+    //     {
+    //         for (int j = 0; j < columns; ++j)
+    //         {
+    //             numbers[i][j] = count++;
+    //             cout << setw(5) << numbers[i][j];
+    //         }
+    //         cout << "\n";
+    //     }
 
-// void main()
-// {
-//     int rows = 3, columns = 4;
-//     int numbers[3][4];
-//     int count = 1;
+    //     return 0;
+    // }
 
-//     for (int i = 0; i < rows; ++i)
-//     {
-//         for (int j = 0; j < columns; ++j)
-//         {
-//             numbers[i][j] = count++;
-//             cout << setw(5) << numbers[i][j];
-//         }
-//         cout << "\n";
-//     }
+    // {
+    //     int rows = 3, columns = 4;
+    //     int numbers[3][4];
+    //     int count = 1;
 
-//     return 0;
-// }
+    //     for (int i = 0; i < rows; ++i)
+    //     {
+    //         for (int j = 0; j < columns; ++j)
+    //         {
+    //             numbers[i][j] = count++;
+    //             cout << setw(5) << numbers[i][j];
+    //         }
+    //         cout << "\n";
+    //     }
 
-// {
-//     int rows = 3, columns = 4;
-//     int numbers[3][4];
-//     int count = 1;
-
-//     for (int i = 0; i < rows; ++i)
-//     {
-//         for (int j = 0; j < columns; ++j)
-//         {
-//             numbers[i][j] = count++;
-//             cout << setw(5) << numbers[i][j];
-//         }
-//         cout << "\n";
-//     }
-
-//     return 0;
-// }
+    //     return 0;
+    // }
