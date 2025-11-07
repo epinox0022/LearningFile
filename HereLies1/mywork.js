@@ -1,7 +1,7 @@
-
-
-
-
+let chAr = 'developer';
+let x;
+x = chAr.substring(0,1).toUpperCase() + chAr.substring(1);
+console.log(x);
 
 
 /* */ //Use this for your comments and grouping
