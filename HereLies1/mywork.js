@@ -53,3 +53,5 @@ const questions = [
     answer: 3
   }
 ];
+
+let score = 0;
