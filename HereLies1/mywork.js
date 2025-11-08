@@ -36,3 +36,20 @@ git push
 git pull
 */
 
+const questions = [
+  {
+    question: "What is the capital of France?",
+    options: ["1. Berlin", "2. Madrid", "3. Paris", "4. Rome"],
+    answer: 3
+  },
+  {
+    question: "Which planet is known as the Red Planet?",
+    options: ["1. Earth", "2. Mars", "3. Jupiter", "4. Venus"],
+    answer: 2
+  },
+  {
+    question: "What is 5 + 7?",
+    options: ["1. 10", "2. 11", "3. 12", "4. 13"],
+    answer: 3
+  }
+];
