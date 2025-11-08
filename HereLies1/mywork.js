@@ -55,3 +55,9 @@ const questions = [
 ];
 
 let score = 0;
+
+questions.forEach((q, index) => {
+  const userAnswer = parseInt(prompt(`${q.question}\n${q.options.join("\n")}`));
+  if (userAnswer === q.answer) {
+    alert("Correct!");
+    score++;
