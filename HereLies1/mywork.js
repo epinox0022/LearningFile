@@ -5,6 +5,7 @@ x = chAr.substring(0,1) + chAr.substring(1,9).toUpperCase() ;
 console.log(x);
 */ 
 
+/* 
 const x = Math.floor(Math.random() * 101);
 const y = Math.floor(Math.random() * 51);
 
@@ -20,6 +21,7 @@ console.log(reS1);
 console.log(reS2);
 console.log(reS3);
 console.log(reS4);
+*/
 
 /* */ //Use this for your comments and grouping
 
