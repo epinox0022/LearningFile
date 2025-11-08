@@ -61,3 +61,10 @@ questions.forEach((q, index) => {
   if (userAnswer === q.answer) {
     alert("Correct!");
     score++;
+     } else {
+    alert(`Wrong! The correct answer was option ${q.answer}.`);
+  }
+});
+
+alert(`Quiz finished! Your score: ${score}/${questions.length}`);
+
