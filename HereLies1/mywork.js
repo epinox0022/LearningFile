@@ -23,19 +23,7 @@ console.log(reS3);
 console.log(reS4);
 */
 
-/* */ //Use this for your comments and grouping
-
-// My name is mark Fernandez
-// This is my profile object SHeeeshhh
-// She's soo beautiful I can't stop looking at her
 /*
-git init
-git add .
-git commit -m 'mark'
-git push
-git pull
-*/
-
 const questions = [
   {
     question: "What is the capital of France?",
@@ -67,4 +55,27 @@ questions.forEach((q, index) => {
 });
 
 alert(`Quiz finished! Your score: ${score}/${questions.length}`);
+*/
+
+const arr = [1,2,3,4,5];
+
+arr.reverse().push(0);
+
+
+
+console.log(arr);
+
+
+/* */ //Use this for your comments and grouping
+
+// My name is mark Fernandez
+// This is my profile object SHeeeshhh
+// She's soo beautiful I can't stop looking at her
+/*
+git init
+git add .
+git commit -m 'mark'
+git push
+git pull
+*/
 
