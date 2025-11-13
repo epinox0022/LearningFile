@@ -76,6 +76,7 @@ console.log(arr);
 console.log(arr3);
 */
 
+/*
 let a;
 
 const library = [
@@ -101,6 +102,56 @@ const {title: firstBook} = library[0];
 const str = JSON.stringify(library);
 
 console.log(firstBook);
+*/
+
+function iLuvU() {
+  console.log('I love you');
+}
+iLuvU();
+
+function pYf(name, age) {
+  console.log(`My name is ${name} and I'm ${age} years old.`);
+}
+pYf('Mark', 19);
+
+function subTract(num1, num2) {
+  return num1 - num2;
+}
+const result = subTract(10, 5);
+console.log(result);
+
+function sUm(...numbers) {
+  return numbers;
+}
+console.log(sUm(1,2,3,4,5));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* */ //Use this for your comments and grouping
