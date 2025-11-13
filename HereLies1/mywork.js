@@ -76,6 +76,32 @@ console.log(arr);
 console.log(arr3);
 */
 
+let a;
+
+const library = [
+{
+  title: 'Equinox The Hidden',
+  author: 'Mark Fernandez',
+  status:
+  {own: true, reading: false, read: false},
+},
+{
+  title: 'The Alchemist',
+  author: 'Pa',
+  status:
+  {own: true, reading: true, read: false}
+},
+];
+
+library[0].status.read = true;
+library[1].status.read = true;
+
+const {title: firstBook} = library[0];
+
+const str = JSON.stringify(library);
+
+console.log(firstBook);
+
 
 /* */ //Use this for your comments and grouping
 
