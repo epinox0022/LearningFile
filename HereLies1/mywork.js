@@ -121,8 +121,15 @@ const result = subTract(10, 5);
 console.log(result);
 
 function sUm(...numbers) {
-  return numbers;
-}
+
+  let total = 0;
+
+  for (const num of numbers){
+    total = total + num;
+  };
+
+  return total;
+};
 console.log(sUm(1,2,3,4,5));
 
 
