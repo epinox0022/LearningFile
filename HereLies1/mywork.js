@@ -104,6 +104,7 @@ const str = JSON.stringify(library);
 console.log(firstBook);
 */
 
+/* 
 function iLuvU() {
   console.log('I love you');
 }
@@ -147,16 +148,27 @@ function randomNum(arr) {
 
 randomNum([1,2,3,4,5]);
 
+function add() {
+
+  const x = 40;
+  const mar = x + 100;
+  return mar;
+}
 
 
+console.log(add());
+*/
 
+// const getCelsius = (f) => {
+//   return (f - 32)* 5/9;
+// };
 
+function getCelsius(f) {
+  const celsius = (f - 32) * 5 / 9;
+  return celsius;
+}
 
-
-
-
-
-
+console.log(`The temperature is ${getCelsius(32)}\xB0C`);
 
 
 
