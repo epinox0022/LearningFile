@@ -159,19 +159,25 @@ function add() {
 console.log(add());
 */
 
-// const getCelsius = (f) => {
-//   return (f - 32)* 5/9;
-// };
-
-function getCelsius(f) {
-  const celsius = (f - 32) * 5 / 9;
-  return celsius;
-}
-
+const getCelsius = (f) => ((f-32) * 5 / 9);
+// function getCelsius(f) {
+//   return (f - 32) * 5 / 9;
+// }
 console.log(`The temperature is ${getCelsius(32)}\xB0C`);
 
 
+let a;
 
+const minMax = (minmax) => {
+
+  const min = Math.min(...minmax);
+  const max = Math.max(...minmax);
+
+  return `{min: ${min}, max: ${max}}`;
+
+}
+
+console.log(minMax([1,2,3,4,5]));
 
 
 
