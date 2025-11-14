@@ -133,6 +133,21 @@ function sUm(...numbers) {
 console.log(sUm(1,2,3,4,5));
 
 
+function randomNum(arr) {
+  
+  const nums = Math.random();
+
+  const randomIndex = Math.floor(nums * arr.length);
+  
+  const randomElement = arr[randomIndex];
+
+  console.log(randomElement);
+  console.log(nums);
+};
+
+randomNum([1,2,3,4,5]);
+
+
 
 
 
