@@ -179,8 +179,9 @@ const minMax = (minmax) => {
 
 console.log(minMax([1,2,3,4,5]));
 
-
-
+(function() {
+  console.log(`The area of the rectangle with length ${lngth} and width ${wdth} is ${aRea}`);
+})();
 
 
 
